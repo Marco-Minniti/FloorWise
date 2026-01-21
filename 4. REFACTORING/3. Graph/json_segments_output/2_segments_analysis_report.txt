@@ -1,0 +1,290 @@
+ANALISI SEGMENTI DAL JSON
+========================================
+
+RIEPILOGO SEGMENTI:
+-------------------------
+Segmenti esterni: 27
+Muri portanti: 12
+Tramezzi: 10
+Porte tra stanze: 10
+Muri interni: 4
+Porte interne: 0
+TOTALE SEGMENTI: 63
+
+
+DOORS BETWEEN ROOMS:
+------------------------------
+ID: m#1#room_5-room_9
+Coordinate: (2474.2, 1338.3, 2474.2, 386.6000000000001)
+Tipo: load-bearing
+PORTA: SÌ
+
+ID: m#44#room_11-room_8
+Coordinate: (1563.6, 1630.8, 1563.6, 2080.4)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#45#room_11-room_3
+Coordinate: (1563.6, 2080.4, 1563.6, 2323.3)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#47#room_11-room_10
+Coordinate: (966.0, 1281.2, 966.0, 1630.8)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#49#room_11-room_1
+Coordinate: (1116.1, 2323.3, 1116.1, 2080.4)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#51#room_11-room_4
+Coordinate: (1563.6, 2323.3, 1116.1, 2323.3)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#52#room_11-room_2
+Coordinate: (1116.1, 1960.2, 1116.1, 1630.8)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#53#room_11-room_7
+Coordinate: (1350.7, 1122.1, 1116.1, 1122.1)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#54#room_5-room_11
+Coordinate: (1350.7, 1222.1, 1350.7, 1122.1)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#56#room_11-room_6
+Coordinate: (966.0, 1222.1, 1116.1, 1122.1)
+Tipo: partition
+PORTA: SÌ
+
+
+EXTERNAL SEGMENTS:
+------------------------------
+ID: m#4#room_10-External
+Coordinate: (491.7, 1630.8, 226.6, 1630.8)
+Tipo: load-bearing
+
+ID: m#5#room_1-External
+Coordinate: (226.6, 2080.4, 491.7, 2080.4)
+Tipo: load-bearing
+
+ID: m#7#room_8-External
+Coordinate: (2783.5, 2080.4, 2783.5, 1338.3)
+Tipo: load-bearing
+
+ID: m#8#room_3-External
+Coordinate: (2268.5, 2847.8, 1563.6, 2847.8)
+Tipo: load-bearing
+
+ID: m#9#room_4-External
+Coordinate: (1563.6, 2847.8, 1116.1, 2847.8)
+Tipo: load-bearing
+
+ID: m#10#room_1-External
+Coordinate: (1116.1, 2847.8, 491.7, 2847.8)
+Tipo: load-bearing
+
+ID: m#11#room_9-External
+Coordinate: (2809.7, 357.8, 2809.7, 1222.1)
+Tipo: load-bearing
+
+ID: m#12#room_3-External
+Coordinate: (2326.5, 2080.4, 2326.5, 2643.0)
+Tipo: load-bearing
+
+ID: m#17#room_10-External
+Coordinate: (226.6, 1630.8, 226.6, 1169.6)
+Tipo: load-bearing
+
+ID: m#18#room_6-External
+Coordinate: (226.6, 1169.6, 226.6, 763.0000000000001)
+Tipo: load-bearing
+
+ID: m#19#room_8-External
+Coordinate: (2783.5, 2080.4, 2326.5, 2080.4)
+Tipo: load-bearing
+
+ID: m#20#room_6-External
+Coordinate: (620.0, 386.6000000000001, 1116.1, 386.6000000000001)
+Tipo: load-bearing
+
+ID: m#21#room_7-External
+Coordinate: (1116.1, 386.6000000000001, 1350.7, 386.6000000000001)
+Tipo: load-bearing
+
+ID: m#22#room_5-External
+Coordinate: (1350.7, 386.6000000000001, 2474.2, 386.6000000000001)
+Tipo: load-bearing
+
+ID: m#23#room_2-External
+Coordinate: (491.7, 1912.3, 491.7, 2080.4)
+Tipo: load-bearing
+
+ID: m#24#room_9-External
+Coordinate: (2538.8, 319.5, 2746.8, 319.5)
+Tipo: load-bearing
+
+ID: m#27#room_10-External
+Coordinate: (491.7, 1630.8, 586.2, 1796.8)
+Tipo: load-bearing
+
+ID: m#28#room_9-External
+Coordinate: (2746.8, 319.5, 2809.7, 357.8)
+Tipo: load-bearing
+
+ID: m#29#room_6-External
+Coordinate: (226.6, 763.0000000000001, 620.0, 386.6000000000001)
+Tipo: load-bearing
+
+ID: m#30#room_1-External
+Coordinate: (197.49999999999997, 2149.0, 226.6, 2080.4)
+Tipo: load-bearing
+
+ID: m#32#room_1-External
+Coordinate: (197.49999999999997, 2564.8, 226.6, 2596.7)
+Tipo: load-bearing
+
+ID: m#34#room_1-External
+Coordinate: (226.6, 2596.7, 491.7, 2847.8)
+Tipo: load-bearing
+
+ID: m#36#room_3-External
+Coordinate: (2326.5, 2643.0, 2268.5, 2847.8)
+Tipo: load-bearing
+
+ID: m#37#room_2-External
+Coordinate: (586.2, 1796.8, 491.7, 1912.3)
+Tipo: load-bearing
+
+ID: m#38#room_9-External
+Coordinate: (2474.2, 386.6000000000001, 2538.8, 319.5)
+Tipo: load-bearing
+
+ID: m#40#room_1-External
+Coordinate: (197.49999999999997, 2564.8, 197.49999999999997, 2149.0)
+Tipo: load-bearing
+
+ID: m#41#room_9-External
+Coordinate: (2783.5, 1338.3, 2809.7, 1222.1)
+Tipo: load-bearing
+
+
+INTERNAL WALLS:
+------------------------------
+ID: m#2#room_8-room_8
+Coordinate: (1563.6, 1630.8, 1908.3, 1630.8)
+Tipo: load-bearing
+
+ID: m#26#room_11-room_11
+Coordinate: (1420.5, 1338.3, 1350.7, 1338.3)
+Tipo: load-bearing
+
+ID: m#60#room_11-room_11
+Coordinate: (1183.3, 2080.4, 1116.1, 2080.4)
+Tipo: partition
+
+ID: m#63#room_11-room_11
+Coordinate: (1563.6, 2080.4, 1350.7, 2080.4)
+Tipo: partition
+
+
+LOAD BEARING WALLS:
+------------------------------
+ID: m#3#room_11-room_10
+Coordinate: (966.0, 1222.1, 966.0, 1281.2)
+Tipo: load-bearing
+
+ID: m#6#room_1-room_2
+Coordinate: (491.7, 2080.4, 866.1, 2080.4)
+Tipo: load-bearing
+
+ID: m#13#room_7-room_6
+Coordinate: (1116.1, 1122.1, 1116.1, 795.6999999999999)
+Tipo: load-bearing
+
+ID: m#14#room_8-room_9
+Coordinate: (2783.5, 1338.3, 2474.2, 1338.3)
+Tipo: load-bearing
+
+ID: m#15#room_11-room_2
+Coordinate: (1116.1, 1630.8, 966.0, 1630.8)
+Tipo: load-bearing
+
+ID: m#16#room_10-room_2
+Coordinate: (966.0, 1630.8, 784.9, 1630.8)
+Tipo: load-bearing
+
+ID: m#25#room_5-room_11
+Coordinate: (1563.6, 1338.3, 1420.5, 1338.3)
+Tipo: load-bearing
+
+ID: m#31#room_10-room_2
+Coordinate: (586.2, 1796.8, 784.9, 1630.8)
+Tipo: load-bearing
+
+ID: m#33#room_3-room_8
+Coordinate: (1563.6, 2080.4, 1761.6, 2080.4)
+Tipo: load-bearing
+
+ID: m#35#room_10-room_6
+Coordinate: (866.1, 1169.6, 966.0, 1222.1)
+Tipo: load-bearing
+
+ID: m#39#room_5-room_11
+Coordinate: (1350.7, 1222.1, 1420.5, 1338.3)
+Tipo: load-bearing
+
+ID: m#42#room_11-room_2
+Coordinate: (1116.1, 2025.2, 1116.1, 1960.2)
+Tipo: load-bearing
+
+
+PARTITIONS:
+------------------------------
+ID: m#43#room_11-room_8
+Coordinate: (1563.6, 1338.3, 1563.6, 1630.8)
+Tipo: partition
+
+ID: m#46#room_3-room_4
+Coordinate: (1563.6, 2323.3, 1563.6, 2847.8)
+Tipo: partition
+
+ID: m#48#room_1-room_4
+Coordinate: (1116.1, 2847.8, 1116.1, 2323.3)
+Tipo: partition
+
+ID: m#50#room_11-room_2
+Coordinate: (1116.1, 2080.4, 1116.1, 2025.2)
+Tipo: partition
+
+ID: m#55#room_5-room_7
+Coordinate: (1350.7, 1122.1, 1350.7, 386.6000000000001)
+Tipo: partition
+
+ID: m#57#room_10-room_6
+Coordinate: (226.6, 1169.6, 866.1, 1169.6)
+Tipo: partition
+
+ID: m#58#room_3-room_8
+Coordinate: (2326.5, 2080.4, 1761.6, 2080.4)
+Tipo: partition
+
+ID: m#59#room_7-room_6
+Coordinate: (1116.1, 386.6000000000001, 1116.1, 795.6999999999999)
+Tipo: partition
+
+ID: m#61#room_1-room_2
+Coordinate: (1116.1, 2080.4, 866.1, 2080.4)
+Tipo: partition
+
+ID: m#62#room_5-room_8
+Coordinate: (1563.6, 1338.3, 2474.2, 1338.3)
+Tipo: partition
+

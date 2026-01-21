@@ -1,0 +1,324 @@
+{
+  "rooms": {
+    "s#room_1#CUCINA": {
+      "borders": [
+        "m#6#room_1-room_2",
+        "m#10#room_5-room_1",
+        "m#21#room_1-External",
+        "m#27#room_1-External",
+        "m#29#room_1-External",
+        "m#35#room_5-room_1"
+      ],
+      "color": "#0000FF"
+    },
+    "s#room_2#RIPOSTIGLIO": {
+      "borders": [
+        "m#2#room_3-room_2",
+        "m#6#room_1-room_2",
+        "m#9#room_2-room_4",
+        "m#30#room_2-External"
+      ],
+      "color": "#00FF00"
+    },
+    "s#room_3#SOGGIORNO": {
+      "borders": [
+        "m#2#room_3-room_2",
+        "m#11#room_3-room_6",
+        "m#17#room_3-External",
+        "m#31#room_3-External"
+      ],
+      "color": "#FF0000"
+    },
+    "s#room_4#DISIMPENGO": {
+      "borders": [
+        "m#4#room_5-room_4",
+        "m#8#room_6-room_4",
+        "m#9#room_2-room_4",
+        "m#13#room_9-room_4",
+        "m#14#room_5-room_4",
+        "m#15#room_10-room_4"
+      ],
+      "color": "#00FFFF"
+    },
+    "s#room_5#STUDIO": {
+      "borders": [
+        "m#4#room_5-room_4",
+        "m#10#room_5-room_1",
+        "m#14#room_5-room_4",
+        "m#19#room_5-room_9",
+        "m#28#room_5-External",
+        "m#35#room_5-room_1"
+      ],
+      "color": "#FF00FF"
+    },
+    "s#room_6#BAGNO": {
+      "borders": [
+        "m#1#room_7-room_6",
+        "m#8#room_6-room_4",
+        "m#11#room_3-room_6"
+      ],
+      "color": "#FFFF00"
+    },
+    "s#room_7#MATRIMONIALE": {
+      "borders": [
+        "m#1#room_7-room_6",
+        "m#7#room_7-room_10",
+        "m#16#room_7-room_8",
+        "m#25#room_7-room_8",
+        "m#33#room_7-External",
+        "m#34#room_7-External"
+      ],
+      "color": "#0080FF"
+    },
+    "s#room_8#BALCONE": {
+      "borders": [
+        "m#16#room_7-room_8",
+        "m#22#room_8-External",
+        "m#25#room_7-room_8",
+        "m#26#room_8-External",
+        "m#32#room_8-External"
+      ],
+      "color": "#FF0080"
+    },
+    "s#room_9#CAMERA": {
+      "borders": [
+        "m#12#room_9-room_10",
+        "m#13#room_9-room_4",
+        "m#19#room_5-room_9",
+        "m#20#room_9-External",
+        "m#23#room_9-External",
+        "m#24#room_9-External"
+      ],
+      "color": "#FF8000"
+    },
+    "s#room_10#INGRESSO": {
+      "borders": [
+        "m#7#room_7-room_10",
+        "m#12#room_9-room_10",
+        "m#15#room_10-room_4"
+      ],
+      "color": "#8080FF"
+    }
+  },
+  "walls": {
+    "m#1#room_7-room_6": {
+      "path": "M 1540.0390625,1776.85546875 L 2605.2734375000005,1776.85546875",
+      "type": "partition"
+    },
+    "m#2#room_3-room_2": {
+      "path": "M 1738.671875,1128.22265625 L 1738.671875,188.37890625",
+      "type": "partition",
+      "door": "yes"
+    },
+    "m#3#External-External": {
+      "path": "M 1738.671875,188.37890625 L 1738.671875,146.484375",
+      "type": "partition",
+      "door": "yes"
+    },
+    "m#4#room_5-room_4": {
+      "path": "M 1329.8828125,1776.85546875 L 1329.8828125,1032.12890625",
+      "type": "partition",
+      "door": "yes"
+    },
+    "m#5#External-External": {
+      "path": "M 1146.2890625,146.484375 L 1146.2890625,188.37890625",
+      "type": "partition",
+      "door": "yes"
+    },
+    "m#6#room_1-room_2": {
+      "path": "M 1146.2890625,188.37890625 L 1146.2890625,1032.12890625",
+      "type": "partition",
+      "door": "yes"
+    },
+    "m#7#room_7-room_10": {
+      "path": "M 1540.0390625,2634.9609375 L 1540.0390625,2115.234375",
+      "type": "partition"
+    },
+    "m#8#room_6-room_4": {
+      "path": "M 1540.0390625,2115.234375 L 1540.0390625,1128.22265625",
+      "type": "partition",
+      "door": "yes"
+    },
+    "m#9#room_2-room_4": {
+      "path": "M 1146.2890625,750.0 L 1738.671875,750.0",
+      "type": "partition",
+      "door": "yes"
+    },
+    "m#10#room_5-room_1": {
+      "path": "M 1329.8828125,1032.12890625 L 558.59375,1032.12890625",
+      "type": "partition"
+    },
+    "m#11#room_3-room_6": {
+      "path": "M 1540.0390625,1128.22265625 L 2605.2734375000005,1128.22265625",
+      "type": "partition"
+    },
+    "m#12#room_9-room_10": {
+      "path": "M 1146.2890625,2634.9609375 L 1146.2890625,2115.234375",
+      "type": "partition"
+    },
+    "m#13#room_9-room_4": {
+      "path": "M 1146.2890625,2115.234375 L 1146.2890625,1776.85546875",
+      "type": "partition",
+      "door": "yes"
+    },
+    "m#14#room_5-room_4": {
+      "path": "M 1329.8828125,1776.85546875 L 1146.2890625,1776.85546875",
+      "type": "partition"
+    },
+    "m#15#room_10-room_4": {
+      "path": "M 1540.0390625,2115.234375 L 1146.2890625,2115.234375",
+      "type": "partition",
+      "door": "yes"
+    },
+    "m#16#room_7-room_8": {
+      "path": "M 2605.2734375000005,2115.234375 L 2605.2734375000005,1776.85546875",
+      "type": "partition",
+      "door": "yes"
+    },
+    "m#17#room_3-External": {
+      "path": "M 2605.2734375000005,1776.85546875 L 2605.2734375000005,188.37890625",
+      "type": "partition"
+    },
+    "m#18#External-External": {
+      "path": "M 2605.2734375000005,188.37890625 L 2605.2734375000005,146.484375",
+      "type": "partition",
+      "door": "yes"
+    },
+    "m#19#room_5-room_9": {
+      "path": "M 1146.2890625,1776.85546875 L 540.234375,1776.85546875",
+      "type": "partition"
+    },
+    "m#20#room_9-External": {
+      "path": "M 540.234375,1776.85546875 L 344.14062499999994,1776.85546875",
+      "type": "partition"
+    },
+    "m#21#room_1-External": {
+      "path": "M 344.14062499999994,1032.12890625 L 558.59375,1032.12890625",
+      "type": "partition"
+    },
+    "m#22#room_8-External": {
+      "path": "M 2799.21875,2634.9609375 L 2799.21875,1776.85546875",
+      "type": "partition"
+    },
+    "m#23#room_9-External": {
+      "path": "M 344.14062499999994,2634.9609375 L 344.14062499999994,1776.85546875",
+      "type": "partition"
+    },
+    "m#24#room_9-External": {
+      "path": "M 1540.0390625,2634.9609375 L 344.14062499999994,2634.9609375",
+      "type": "partition"
+    },
+    "m#25#room_7-room_8": {
+      "path": "M 2605.2734375000005,2739.84375 L 2605.2734375000005,2115.234375",
+      "type": "partition"
+    },
+    "m#26#room_8-External": {
+      "path": "M 2799.21875,1776.85546875 L 2605.2734375000005,1776.85546875",
+      "type": "partition"
+    },
+    "m#27#room_1-External": {
+      "path": "M 344.14062499999994,188.37890625 L 344.14062499999994,1032.12890625",
+      "type": "partition"
+    },
+    "m#28#room_5-External": {
+      "path": "M 540.234375,1032.12890625 L 540.234375,1776.85546875",
+      "type": "partition"
+    },
+    "m#29#room_1-External": {
+      "path": "M 344.14062499999994,188.37890625 L 1146.2890625,188.37890625",
+      "type": "partition"
+    },
+    "m#30#room_2-External": {
+      "path": "M 1146.2890625,188.37890625 L 1738.671875,188.37890625",
+      "type": "partition"
+    },
+    "m#31#room_3-External": {
+      "path": "M 1738.671875,188.37890625 L 2605.2734375000005,188.37890625",
+      "type": "partition"
+    },
+    "m#32#room_8-External": {
+      "path": "M 2799.21875,2634.9609375 L 2775.0,2739.84375",
+      "type": "partition"
+    },
+    "m#33#room_7-External": {
+      "path": "M 1540.0390625,2634.9609375 L 1540.0390625,2774.4140625",
+      "type": "partition"
+    },
+    "m#34#room_7-External": {
+      "path": "M 2775.0,2739.84375 L 1540.0390625,2739.84375",
+      "type": "partition"
+    },
+    "m#35#room_5-room_1": {
+      "path": "M 540.234375,1032.12890625 L 558.59375,1032.12890625",
+      "type": "partition"
+    },
+    "m#36#External-External": {
+      "path": "M 1540.0390625,2739.84375 L 1540.0390625,2774.4140625",
+      "type": "partition",
+      "door": "yes"
+    }
+  },
+  "links": [
+    {
+      "source": "room_1",
+      "name_source": "CUCINA",
+      "target": "room_4",
+      "name_target": "DISIMPENGO"
+    },
+    {
+      "source": "room_2",
+      "name_source": "RIPOSTIGLIO",
+      "target": "room_4",
+      "name_target": "DISIMPENGO"
+    },
+    {
+      "source": "room_3",
+      "name_source": "SOGGIORNO",
+      "target": "room_4",
+      "name_target": "DISIMPENGO"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPENGO",
+      "target": "room_5",
+      "name_target": "STUDIO"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPENGO",
+      "target": "room_6",
+      "name_target": "BAGNO"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPENGO",
+      "target": "room_7",
+      "name_target": "MATRIMONIALE"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPENGO",
+      "target": "room_9",
+      "name_target": "CAMERA"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPENGO",
+      "target": "room_10",
+      "name_target": "INGRESSO"
+    },
+    {
+      "source": "room_7",
+      "name_source": "MATRIMONIALE",
+      "target": "room_8",
+      "name_target": "BALCONE"
+    }
+  ],
+  "metadata": {
+    "input_image": "4.png",
+    "total_rooms": 10,
+    "total_connections": 9,
+    "unified_zones_found": 10,
+    "filtered_zones_used": 9
+  }
+}

@@ -1,0 +1,157 @@
+ANALISI SEGMENTI DAL JSON
+========================================
+
+RIEPILOGO SEGMENTI:
+-------------------------
+Segmenti esterni: 12
+Muri portanti: 0
+Tramezzi: 10
+Porte tra stanze: 9
+Muri interni: 0
+Porte interne: 0
+TOTALE SEGMENTI: 31
+
+
+DOORS BETWEEN ROOMS:
+------------------------------
+ID: m#3#room_3-room_4
+Coordinate: (1696.58203125, 699.4140625, 1696.58203125, 1014.453125)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#4#room_4-room_6
+Coordinate: (1696.58203125, 1014.453125, 1696.58203125, 1530.859375)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#5#room_4-room_8
+Coordinate: (1696.58203125, 1530.859375, 1696.58203125, 1715.4296875)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#6#room_4-room_7
+Coordinate: (1160.44921875, 1900.5859375, 1160.44921875, 1014.453125)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#7#room_5-room_4
+Coordinate: (1160.44921875, 1014.453125, 1160.44921875, 805.46875)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#10#room_5-room_1
+Coordinate: (341.015625, 805.46875, 1160.44921875, 805.46875)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#12#room_4-room_2
+Coordinate: (1160.44921875, 699.4140625, 1696.58203125, 699.4140625)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#14#room_10-room_8
+Coordinate: (2068.9453125, 2479.6875, 2288.0859375, 2479.6875)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#15#room_7-room_9
+Coordinate: (1446.97265625, 1900.5859375, 341.015625, 1900.5859375)
+Tipo: partition
+PORTA: SÌ
+
+
+EXTERNAL SEGMENTS:
+------------------------------
+ID: m#1#External-External
+Coordinate: (1696.58203125, 175.78125, 1696.58203125, 205.46875000000003)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#18#room_10-External
+Coordinate: (768.45703125, 2479.6875, 768.45703125, 2795.5078125)
+Tipo: partition
+
+ID: m#19#room_6-External
+Coordinate: (2648.4375, 2479.6875, 2648.4375, 205.46875000000003)
+Tipo: partition
+
+ID: m#20#room_7-External
+Coordinate: (341.015625, 205.46875000000003, 341.015625, 2479.6875)
+Tipo: partition
+
+ID: m#23#room_1-External
+Coordinate: (341.015625, 205.46875000000003, 1160.44921875, 205.46875000000003)
+Tipo: partition
+
+ID: m#24#room_2-External
+Coordinate: (1160.44921875, 205.46875000000003, 1696.58203125, 205.46875000000003)
+Tipo: partition
+
+ID: m#25#room_3-External
+Coordinate: (1696.58203125, 205.46875000000003, 2648.4375, 205.46875000000003)
+Tipo: partition
+
+ID: m#26#room_10-External
+Coordinate: (2648.4375, 2795.5078125, 2686.5234375, 2775.390625)
+Tipo: partition
+
+ID: m#28#room_10-External
+Coordinate: (2686.5234375, 2479.6875, 2686.5234375, 2775.390625)
+Tipo: partition
+
+ID: m#29#room_10-External
+Coordinate: (2648.4375, 2795.5078125, 768.45703125, 2795.5078125)
+Tipo: partition
+
+ID: m#30#External-External
+Coordinate: (1160.44921875, 175.78125, 1160.44921875, 205.46875000000003)
+Tipo: partition
+PORTA: SÌ
+
+ID: m#31#room_10-External
+Coordinate: (2648.4375, 2479.6875, 2686.5234375, 2479.6875)
+Tipo: partition
+
+
+PARTITIONS:
+------------------------------
+ID: m#2#room_3-room_2
+Coordinate: (1696.58203125, 205.46875000000003, 1696.58203125, 699.4140625)
+Tipo: partition
+
+ID: m#8#room_1-room_2
+Coordinate: (1160.44921875, 699.4140625, 1160.44921875, 175.78125)
+Tipo: partition
+
+ID: m#9#room_9-room_8
+Coordinate: (1446.97265625, 2479.6875, 1446.97265625, 1715.4296875)
+Tipo: partition
+
+ID: m#11#room_3-room_6
+Coordinate: (2648.4375, 1014.453125, 1696.58203125, 1014.453125)
+Tipo: partition
+
+ID: m#13#room_4-room_8
+Coordinate: (1696.58203125, 1715.4296875, 1446.97265625, 1715.4296875)
+Tipo: partition
+
+ID: m#16#room_5-room_7
+Coordinate: (341.015625, 1014.453125, 1160.44921875, 1014.453125)
+Tipo: partition
+
+ID: m#17#room_8-room_6
+Coordinate: (2648.4375, 1530.859375, 1696.58203125, 1530.859375)
+Tipo: partition
+
+ID: m#21#room_10-room_8
+Coordinate: (2288.0859375, 2479.6875, 2686.5234375, 2479.6875)
+Tipo: partition
+
+ID: m#22#room_10-room_9
+Coordinate: (2068.9453125, 2479.6875, 341.015625, 2479.6875)
+Tipo: partition
+
+ID: m#27#room_1-room_4
+Coordinate: (1160.44921875, 699.4140625, 1160.44921875, 805.46875)
+Tipo: partition
+
