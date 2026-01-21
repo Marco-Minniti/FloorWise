@@ -1,0 +1,2 @@
+[console_scripts]
+house-planner = houseplanner.cli:main

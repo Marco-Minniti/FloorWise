@@ -1,0 +1,169 @@
+Metadata-Version: 2.4
+Name: house-planner
+Version: 0.1.0
+Summary: A Python library for parsing and analyzing house floor plans
+Author-email: Marco <marco@example.com>
+License: MIT
+Keywords: house,floor-plan,architecture,parsing
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: shapely>=2.0.0
+Requires-Dist: networkx>=3.0
+Requires-Dist: numpy>=1.24.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+
+# House Planner
+
+A Python library for parsing and analyzing house floor plans from JSON data.
+
+## Features
+
+- Parse house floor plan data from JSON files
+- Immutable data structures for rooms, walls, and house layouts
+- Type-safe data models with Pydantic validation
+- Support for load-bearing walls and door detection
+- Room connectivity analysis
+
+## Installation
+
+This project uses Python 3.11+ and requires the conda environment `phase2` to be activated.
+
+```bash
+conda activate phase2
+pip install -e .
+```
+
+## Development Setup
+
+Install development dependencies:
+
+```bash
+conda activate phase2
+pip install -e ".[dev]"
+```
+
+## Usage
+
+### Basic Usage
+
+```python
+from houseplanner.io.parser import load_house
+
+# Load a house from JSON
+house = load_house("data/3_graph_updated_with_walls.json")
+
+# Access rooms
+for room_id, room in house.rooms.items():
+    print(f"Room {room_id}: {room.name}")
+
+# Access walls
+for wall_id, wall in house.walls.items():
+    print(f"Wall {wall_id}: {wall.a} -> {wall.b}")
+    print(f"  Load bearing: {wall.load_bearing}")
+    print(f"  Has door: {wall.has_door}")
+```
+
+### Command Line Tool
+
+Parse and summarize a house JSON file:
+
+```bash
+python scripts/parse_and_summary.py data/3_graph_updated_with_walls.json
+```
+
+Expected output:
+```
+Rooms: 11 | Walls: 63
+First rooms: STUDIO, CUCINA, BAGNO
+Load-bearing walls: 41
+Walls with doors: 8
+Room connections: 10
+```
+
+## Data Models
+
+### Point
+Represents a 2D coordinate point.
+
+### Wall
+Represents a wall with:
+- Start and end points
+- Left and right room references
+- Load-bearing status
+- Door presence
+
+### Room
+Represents a room with:
+- Unique identifier and name
+- Associated wall IDs
+- Color information
+
+### House
+Complete house representation with:
+- Collection of rooms
+- Collection of walls
+- Room connectivity graph
+
+## Development
+
+### Running Tests
+
+```bash
+conda activate phase2
+pytest
+```
+
+### Code Quality
+
+```bash
+conda activate phase2
+ruff check .
+black --check .
+mypy .
+```
+
+### Format Code
+
+```bash
+conda activate phase2
+black .
+ruff --fix .
+```
+
+## Project Structure
+
+```
+house-planner/
+├── pyproject.toml          # Project configuration
+├── README.md               # This file
+├── data/                   # Sample data files
+├── src/houseplanner/       # Main package
+│   ├── __init__.py
+│   ├── core/               # Core data models
+│   │   ├── __init__.py
+│   │   └── model.py
+│   └── io/                 # Input/Output utilities
+│       ├── __init__.py
+│       └── parser.py
+├── tests/                  # Test files
+│   └── test_parser.py
+└── scripts/                # Utility scripts
+    └── parse_and_summary.py
+```
+
+## License
+
+MIT License

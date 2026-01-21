@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Planner - Natural Language Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .section {
+            padding: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        /* Section 1: Input Selection */
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .input-card {
+            position: relative;
+            cursor: pointer;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 4px solid transparent;
+            display: flex;
+            flex-direction: column;
+            background: white;
+        }
+
+        .input-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-card.selected {
+            border-color: #4ade80;
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+        }
+
+        .input-card.not-selected {
+            border-color: #ef4444;
+            opacity: 0.6;
+        }
+
+        .input-card-image-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            padding: 10px;
+            min-height: 200px;
+        }
+
+        .input-card img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .input-card-label {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .input-card.selected .input-card-label {
+            background: rgba(74, 222, 128, 0.95);
+        }
+
+        .input-card.not-selected .input-card-label {
+            background: rgba(239, 68, 68, 0.95);
+        }
+
+        /* Section 2: Chat Interface */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            border: 2px solid #e5e7eb;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #f9fafb;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            padding: 15px 20px;
+            border-radius: 15px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .message.system {
+            align-self: flex-start;
+            background: #e5e7eb;
+            color: #333;
+        }
+
+        .message.error {
+            align-self: flex-start;
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .message.loading {
+            align-self: flex-start;
+            background: #dbeafe;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid #1e40af;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .chat-input-container {
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+            background: white;
+            border-top: 2px solid #e5e7eb;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: inherit;
+            resize: none;
+        }
+
+        .chat-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .send-button {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .send-button:hover:not(:disabled) {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .send-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Section 3: Results */
+        .results-container {
+            min-height: 200px;
+        }
+
+        .results-empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: #9ca3af;
+            font-size: 1.2em;
+        }
+
+        .results-content {
+            display: grid;
+            gap: 30px;
+        }
+
+        .result-section {
+            background: #f9fafb;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .result-section h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.3em;
+        }
+
+        .result-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .result-image-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .result-image-card:hover {
+            transform: scale(1.02);
+        }
+
+        .result-image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .result-image-label {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .solution-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .solution-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .solution-info {
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .solution-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .solution-info p {
+            opacity: 0.9;
+            font-size: 0.9em;
+        }
+
+        .operations-list {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .operations-list h5 {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            opacity: 0.95;
+        }
+
+        .operations-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .operations-list li {
+            padding: 5px 0;
+            font-size: 0.85em;
+            opacity: 0.9;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .operations-list li:last-child {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .status-success {
+            background: #4ade80;
+            color: white;
+        }
+
+        .status-error {
+            background: #ef4444;
+            color: white;
+        }
+
+        /* Toggle Areas Button */
+        .toggle-areas-button {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .toggle-areas-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .toggle-areas-button:active {
+            transform: translateY(0);
+        }
+
+        .toggle-areas-button.showing-areas {
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+        }
+
+        .history-button {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+            z-index: 10;
+            position: relative;
+        }
+
+        .history-button:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+        }
+
+        .history-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .history-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .history-item:hover {
+            border-color: #3b82f6;
+            background: #f0f9ff;
+            transform: translateX(5px);
+        }
+
+        .history-item-title {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+
+        .history-item-meta {
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .back-button {
+            padding: 8px 16px;
+            background: #6b7280;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1> House Planner</h1>
+        </div>
+
+        <!-- Section 1: Input Selection -->
+        <div class="section">
+            <div class="section-title">1. Seleziona l'Input</div>
+            <div class="input-grid" id="inputGrid">
+                <!-- Input cards will be dynamically loaded -->
+            </div>
+        </div>
+
+        <!-- Section 2: Chat Interface -->
+        <div class="section">
+            <div class="section-title">2. Chat con l'LLM</div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message system">
+                         Benvenuto! Seleziona un input e poi scrivi la tua richiesta in linguaggio naturale.<br><br>
+                        <strong>Esempi:</strong><br>
+                        • "Voglio che la camera sia maggiore di 65 m²"<br>
+                        • "Forniscimi 3 soluzioni in cui il soggiorno è maggiore di 66 m²"<br>
+                        • "Genera 1 soluzione per lo studio 1 maggiore di 65 m² mantenendo l'area del bagno e dello studio 2, il disimpegno deve essere di almeno 52 m²"
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <textarea 
+                        class="chat-input" 
+                        id="chatInput" 
+                        placeholder="Scrivi la tua richiesta in linguaggio naturale..."
+                        rows="2"
+                    ></textarea>
+                    <button class="send-button" id="sendButton" onclick="sendMessage()">Invia</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Results -->
+        <div class="section">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%;">
+                <div class="section-title" style="margin-bottom: 0; flex: 1;">3. Risultati</div>
+                <button id="showHistoryButton" class="history-button" onclick="showHistoryList()" type="button" style="display: none;" title="Visualizza risultati precedenti">
+                    Altri risultati
+                </button>
+            </div>
+            <div id="historyListContainer" style="display: none;">
+                <!-- History list will be displayed here -->
+            </div>
+            <div class="results-container" id="resultsContainer">
+                <div class="results-empty">
+                    I risultati delle elaborazioni appariranno qui
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedInputId = null;
+        let inputs = [];
+
+        // Load inputs on page load
+        async function loadInputs() {
+            try {
+                const response = await fetch('/api/inputs');
+                inputs = await response.json();
+                renderInputs();
+            } catch (error) {
+                console.error('Error loading inputs:', error);
+            }
+        }
+
+        function renderInputs() {
+            const grid = document.getElementById('inputGrid');
+            if (!grid) {
+                console.error('Grid element not found');
+                return;
+            }
+            
+            if (!inputs || inputs.length === 0) {
+                console.warn('No inputs loaded yet');
+                return;
+            }
+            
+            grid.innerHTML = '';
+            
+            inputs.forEach(input => {
+                const card = document.createElement('div');
+                card.className = 'input-card';
+                card.dataset.inputId = input.id;
+                card.onclick = () => selectInput(input.id);
+                
+                // Determina quale immagine mostrare:
+                // - Se l'immagine è selezionata, mostra sempre la versione con le aree
+                // - Altrimenti mostra l'immagine normale
+                const isSelected = selectedInputId === input.id;
+                const imagePath = isSelected && input.areas_image_path 
+                    ? input.areas_image_path 
+                    : input.image_path;
+                
+                console.log(`Input ${input.id}: isSelected=${isSelected}, imagePath=${imagePath}`);
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = imagePath;
+                imgElement.alt = `Input ${input.id}`;
+                imgElement.onerror = function() {
+                    console.warn(`Areas image not found for input ${input.id}, using default`);
+                    this.onerror = null; // Prevent infinite loop
+                    this.src = input.image_path; // Fallback to original
+                };
+                
+                const imageWrapper = document.createElement('div');
+                imageWrapper.className = 'input-card-image-wrapper';
+                imageWrapper.appendChild(imgElement);
+                
+                const label = document.createElement('div');
+                label.className = 'input-card-label';
+                label.textContent = `Casa ${input.id}`;
+                
+                card.appendChild(imageWrapper);
+                card.appendChild(label);
+                
+                grid.appendChild(card);
+            });
+            
+            console.log('Inputs rendered successfully');
+        }
+
+        function selectInput(inputId) {
+            selectedInputId = inputId;
+            
+            // Re-render inputs to show areas image for selected input
+            renderInputs();
+            
+            // Update visual feedback (after render to ensure cards exist)
+            setTimeout(() => {
+                document.querySelectorAll('.input-card').forEach(card => {
+                    const cardId = parseInt(card.dataset.inputId);
+                    if (cardId === inputId) {
+                        card.classList.add('selected');
+                        card.classList.remove('not-selected');
+                    } else {
+                        card.classList.add('not-selected');
+                        card.classList.remove('selected');
+                    }
+                });
+            }, 10);
+
+            // Add system message
+            addMessage('system', ` Input ${inputId} selezionato. Ora puoi inviare una richiesta.`);
+        }
+
+        function addMessage(type, text) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const message = document.createElement('div');
+            message.className = `message ${type}`;
+            
+            if (type === 'loading') {
+                message.innerHTML = `
+                    <div class="spinner"></div>
+                    <span>${text}</span>
+                `;
+            } else {
+                message.textContent = text;
+            }
+            
+            messagesDiv.appendChild(message);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function removeLoadingMessage() {
+            const messagesDiv = document.getElementById('chatMessages');
+            const loadingMsg = messagesDiv.querySelector('.message.loading');
+            if (loadingMsg) {
+                loadingMsg.remove();
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            if (!selectedInputId) {
+                addMessage('error', ' Seleziona prima un input!');
+                return;
+            }
+
+            // Add user message
+            addMessage('user', message);
+            input.value = '';
+            
+            // Disable input
+            const sendButton = document.getElementById('sendButton');
+            sendButton.disabled = true;
+            input.disabled = true;
+            
+            // Add loading message
+            addMessage('loading', 'Elaborazione in corso...');
+
+            try {
+                const response = await fetch('/api/process', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        request: message,
+                        input_id: selectedInputId
+                    })
+                });
+
+                removeLoadingMessage();
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    addMessage('system', ` Richiesta elaborata con successo! Tipo: ${result.type}`);
+                    // Reset view to results
+                    currentView = 'results';
+                    showResults();
+                    displayResults(result);
+                } else {
+                    addMessage('error', ` Errore: ${result.error || 'Errore sconosciuto'}`);
+                }
+            } catch (error) {
+                removeLoadingMessage();
+                addMessage('error', ` Errore di connessione: ${error.message}`);
+            } finally {
+                sendButton.disabled = false;
+                input.disabled = false;
+                input.focus();
+            }
+        }
+
+        let currentView = 'results'; // 'results', 'history', 'historyDetail'
+        let currentHistoryId = null;
+        let lastResult = null; // Store last displayed result
+
+        function showHistoryList() {
+            currentView = 'history';
+            document.getElementById('resultsContainer').style.display = 'none';
+            document.getElementById('historyListContainer').style.display = 'block';
+            
+            // Update button text
+            const button = document.getElementById('showHistoryButton');
+            button.textContent = 'Torna al risultato';
+            button.onclick = () => showLastResult();
+            button.style.display = 'inline-block';
+            
+            loadHistory();
+        }
+
+        function showLastResult() {
+            if (lastResult) {
+                currentView = 'results';
+                document.getElementById('resultsContainer').style.display = 'block';
+                document.getElementById('historyListContainer').style.display = 'none';
+                
+                // Update button text
+                const button = document.getElementById('showHistoryButton');
+                button.textContent = 'Altri risultati';
+                button.onclick = () => showHistoryList();
+                
+                // Re-display last result
+                displayResults(lastResult);
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            currentView = 'results';
+            document.getElementById('resultsContainer').style.display = 'block';
+            document.getElementById('historyListContainer').style.display = 'none';
+            
+            // Update button text
+            const button = document.getElementById('showHistoryButton');
+            button.textContent = 'Altri risultati';
+            button.onclick = () => showHistoryList();
+            button.style.display = 'inline-block';
+        }
+
+        async function loadHistory() {
+            try {
+                const response = await fetch('/api/history');
+                const history = await response.json();
+                
+                const container = document.getElementById('historyListContainer');
+                if (history.length === 0) {
+                    container.innerHTML = `
+                        <p style="text-align: center; color: #6b7280; padding: 20px;">Nessun risultato precedente disponibile</p>
+                    `;
+                    return;
+                }
+                
+                const historyList = history.map(item => `
+                    <li class="history-item" onclick="loadHistoryResult('${String(item.id).replace(/'/g, "\\'")}')">
+                        <div class="history-item-title">${escapeHtml(item.prompt)}</div>
+                        <div class="history-item-meta">Casa ${item.input_id} - ${item.type || 'unknown'}</div>
+                    </li>
+                `).join('');
+                
+                container.innerHTML = `
+                    <ul class="history-list">
+                        ${historyList}
+                    </ul>
+                `;
+            } catch (error) {
+                console.error('Error loading history:', error);
+                const container = document.getElementById('historyListContainer');
+                container.innerHTML = `
+                    <p style="color: red; padding: 20px;">Errore nel caricamento dello storico: ${error.message}</p>
+                `;
+            }
+        }
+
+        async function loadHistoryResult(historyId) {
+            currentView = 'historyDetail';
+            currentHistoryId = historyId;
+            
+            try {
+                const response = await fetch(`/api/history/${historyId}`);
+                const result = await response.json();
+                
+                if (result.error) {
+                    alert('Errore: ' + result.error);
+                    return;
+                }
+                
+                // Save result for "Torna al risultato" functionality
+                lastResult = result;
+                
+                // Show results container and hide history list
+                document.getElementById('historyListContainer').style.display = 'none';
+                document.getElementById('resultsContainer').style.display = 'block';
+                
+                // Update button text and action
+                const button = document.getElementById('showHistoryButton');
+                button.textContent = 'Torna alla lista';
+                button.onclick = () => showHistoryList();
+                button.style.display = 'inline-block';
+                
+                // Clear container and display results
+                const container = document.getElementById('resultsContainer');
+                container.innerHTML = '';
+                displayResults(result);
+                
+            } catch (error) {
+                console.error('Error loading history result:', error);
+                alert('Errore nel caricamento del risultato: ' + error.message);
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function displayResults(result) {
+            const container = document.getElementById('resultsContainer');
+            container.innerHTML = '';
+            
+            // Save result for "Torna al risultato" functionality (only if not from history detail)
+            if (currentView !== 'historyDetail') {
+                lastResult = result;
+            }
+            
+            // Show history button if we have results and we're not in history detail view
+            // Always check if there's history available
+            if (currentView === 'historyDetail') {
+                // Button is already set in loadHistoryResult
+            } else {
+                // Check if there's history available
+                fetch('/api/history')
+                    .then(res => res.json())
+                    .then(history => {
+                        if (history && history.length > 0) {
+                            const button = document.getElementById('showHistoryButton');
+                            button.textContent = 'Altri risultati';
+                            button.onclick = () => showHistoryList();
+                            button.style.display = 'inline-block';
+                        } else {
+                            document.getElementById('showHistoryButton').style.display = 'none';
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Error checking history:', err);
+                    });
+            }
+
+            if (result.type === 'operation') {
+                // Operation results
+                const section = document.createElement('div');
+                section.className = 'result-section';
+                section.innerHTML = `
+                    <h3>Risultato Operazione</h3>
+                    <div class="result-images">
+                        ${result.final_image ? `
+                            <div class="result-image-card">
+                                <img src="/images/${encodeURIComponent(result.final_image)}" alt="Stato finale" onerror="this.src='/static/input_images/placeholder.png'; this.onerror=null;" />
+                                <div class="result-image-label">Stato Finale</div>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+                container.appendChild(section);
+            } else if (result.type === 'constraint' || result.type === 'onion_algorithm') {
+                // Constraint/Onion algorithm results
+                const section = document.createElement('div');
+                section.className = 'result-section';
+                
+                let solutionsHtml = '';
+                if (result.solutions && result.solutions.length > 0) {
+                    solutionsHtml = result.solutions.map(sol => {
+                        let operationsHtml = '';
+                        if (sol.operations && sol.operations.length > 0) {
+                            operationsHtml = '<div class="operations-list"><h5>Mosse:</h5><ul>';
+                            sol.operations.forEach((op, idx) => {
+                                let opText = '';
+                                if (op.op === 'move_wall') {
+                                    const delta = op.delta || 0;
+                                    const direction = delta > 0 ? 'avanti' : 'indietro';
+                                    const wallParts = op.wall ? op.wall.split('#') : [];
+                                    const wallId = wallParts.length > 1 ? wallParts[1] : op.wall;
+                                    opText = `Sposta muro ${wallId} di ${Math.abs(delta)} cm ${direction}`;
+                                } else if (op.op === 'close_open') {
+                                    opText = `Chiudi porta su ${op.room_source || ''} e apri su ${op.room_target || ''}`;
+                                } else {
+                                    opText = JSON.stringify(op);
+                                }
+                                operationsHtml += `<li>${idx + 1}. ${opText}</li>`;
+                            });
+                            operationsHtml += '</ul></div>';
+                        }
+                        return `
+                            <div class="solution-card">
+                                <img src="/images/${encodeURIComponent(sol.image_path)}" alt="Soluzione ${sol.index}" onerror="this.src='/static/input_images/placeholder.png'; this.onerror=null;" />
+                                <div class="solution-info">
+                                    <h4>Soluzione ${sol.index}</h4>
+                                    <p>Operazioni: ${sol.operations_count || 0}</p>
+                                    ${operationsHtml}
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                }
+
+                section.innerHTML = `
+                    <h3>Soluzioni Trovate: ${result.solutions ? result.solutions.length : 0}</h3>
+                    <div class="solution-grid">
+                        ${solutionsHtml}
+                    </div>
+                `;
+                container.appendChild(section);
+            }
+
+            // Scroll to results
+            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Allow Enter to send (Shift+Enter for new line)
+        document.getElementById('chatInput').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        // Load inputs on page load
+        loadInputs();
+        
+        // Check if there's history on page load (with delay to ensure DOM is ready)
+        setTimeout(() => {
+            checkHistoryOnLoad();
+        }, 500);
+
+        async function checkHistoryOnLoad() {
+            try {
+                const button = document.getElementById('showHistoryButton');
+                if (!button) {
+                    console.error('History button not found in DOM!');
+                    return;
+                }
+                
+                const response = await fetch('/api/history');
+                if (!response.ok) {
+                    console.error('Failed to fetch history:', response.status);
+                    return;
+                }
+                
+                const history = await response.json();
+                console.log('History check:', history.length, 'entries found');
+                
+                if (history && history.length > 0) {
+                    button.style.display = 'inline-block';
+                    console.log('History button shown');
+                } else {
+                    button.style.display = 'none';
+                    console.log('No history, button hidden');
+                }
+            } catch (error) {
+                console.error('Error checking history:', error);
+            }
+        }
+    </script>
+</body>
+</html>
+
