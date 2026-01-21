@@ -1,0 +1,150 @@
+{
+  "nodes": [
+    {
+      "id": "room_1",
+      "name": "RIPOSTIGLIO",
+      "color": "#0000FF",
+      "svg_path": "1323.6,598.2 1323.6,190.6 732.1,190.6 672.9,226.6 594.4,302.3 490.4,353.9 594.4,396.5 594.4,449.4 672.9,500.2 732.1,500.2 805.1,564.1 884.2,598.2 1193.8,598.2 1323.6,598.2",
+      "full_id": "s#room_1#RIPOSTIGLIO"
+    },
+    {
+      "id": "room_2",
+      "name": "DISIMPEGNO",
+      "color": "#00FF00",
+      "svg_path": "1620.4,1948.2 1620.4,1410.4 1620.4,831.6 1620.4,190.6 1323.6,190.6 1323.6,598.2 1193.8,598.2 1193.8,1003.7 884.2,1003.7 884.2,1153.9 672.9,1333.6 672.9,1622.3 1193.8,1622.3 1193.8,1948.2 1620.4,1948.2",
+      "full_id": "s#room_2#DISIMPEGNO"
+    },
+    {
+      "id": "room_3",
+      "name": "STUDIO",
+      "color": "#FF0000",
+      "svg_path": "1620.4,190.6 1620.4,831.6 2733.4,831.6 2733.4,190.6 1620.4,190.6",
+      "full_id": "s#room_3#STUDIO"
+    },
+    {
+      "id": "room_4",
+      "name": "CUCINA",
+      "color": "#00FFFF",
+      "svg_path": "1193.8,1003.7 1193.8,598.2 884.2,598.2 805.1,564.1 732.1,500.2 672.9,500.2 594.4,449.4 594.4,396.5 490.4,353.9 460.0,353.9 208.6,500.2 208.6,1003.7 884.2,1003.7 1193.8,1003.7",
+      "full_id": "s#room_4#CUCINA"
+    },
+    {
+      "id": "room_5",
+      "name": "SOGGIORNO",
+      "color": "#FF00FF",
+      "svg_path": "1620.4,831.6 1620.4,1410.4 2733.4,1410.4 2733.4,831.6 1620.4,831.6",
+      "full_id": "s#room_5#SOGGIORNO"
+    },
+    {
+      "id": "room_6",
+      "name": "MATRIMONIALE",
+      "color": "#FFFF00",
+      "svg_path": "1620.4,1948.2 1620.4,2126.2 2575.2,2126.2 2733.4,2126.2 2733.4,1410.4 1620.4,1410.4 1620.4,1948.2",
+      "full_id": "s#room_6#MATRIMONIALE"
+    },
+    {
+      "id": "room_7",
+      "name": "CUCINA",
+      "color": "#0080FF",
+      "svg_path": "1193.8,1948.2 1193.8,1622.3 672.9,1622.3 208.6,1622.3 208.6,2126.2 594.4,2126.2 884.2,2126.2 1074.6,2126.2 1074.6,2030.1 1074.6,2004.3 1142.6,1948.2 1193.8,1948.2",
+      "full_id": "s#room_7#CUCINA"
+    },
+    {
+      "id": "room_8",
+      "name": "INGRESSO",
+      "color": "#FF0080",
+      "svg_path": "1620.4,2727.0 1620.4,2126.2 1620.4,1948.2 1193.8,1948.2 1142.6,1948.2 1074.6,2004.3 1074.6,2030.1 1074.6,2126.2 1074.6,2593.9 1074.6,2666.4 1193.8,2758.4 1620.4,2758.4 1620.4,2727.0",
+      "full_id": "s#room_8#INGRESSO"
+    },
+    {
+      "id": "room_9",
+      "name": "BALCONE",
+      "color": "#FF8000",
+      "svg_path": "2575.2,2126.2 2575.2,2758.4 2894.5,2758.4 2894.5,2126.2 2733.4,2126.2 2575.2,2126.2",
+      "full_id": "s#room_9#BALCONE"
+    },
+    {
+      "id": "room_10",
+      "name": "CAMERA",
+      "color": "#8080FF",
+      "svg_path": "1620.4,2126.2 1620.4,2727.0 1620.4,2758.4 2575.2,2758.4 2575.2,2126.2 1620.4,2126.2",
+      "full_id": "s#room_10#CAMERA"
+    },
+    {
+      "id": "room_11",
+      "name": "BAGNO",
+      "color": "#80FF80",
+      "svg_path": "1074.6,2593.9 1074.6,2126.2 884.2,2126.2 594.4,2126.2 594.4,2593.9 1074.6,2593.9",
+      "full_id": "s#room_11#BAGNO"
+    }
+  ],
+  "links": [
+    {
+      "source": "room_1",
+      "name_source": "RIPOSTIGLIO",
+      "target": "room_2",
+      "name_target": "DISIMPEGNO"
+    },
+    {
+      "source": "room_2",
+      "name_source": "DISIMPEGNO",
+      "target": "room_3",
+      "name_target": "STUDIO"
+    },
+    {
+      "source": "room_2",
+      "name_source": "DISIMPEGNO",
+      "target": "room_4",
+      "name_target": "CUCINA"
+    },
+    {
+      "source": "room_2",
+      "name_source": "DISIMPEGNO",
+      "target": "room_5",
+      "name_target": "SOGGIORNO"
+    },
+    {
+      "source": "room_2",
+      "name_source": "DISIMPEGNO",
+      "target": "room_6",
+      "name_target": "MATRIMONIALE"
+    },
+    {
+      "source": "room_2",
+      "name_source": "DISIMPEGNO",
+      "target": "room_7",
+      "name_target": "CUCINA"
+    },
+    {
+      "source": "room_2",
+      "name_source": "DISIMPEGNO",
+      "target": "room_8",
+      "name_target": "INGRESSO"
+    },
+    {
+      "source": "room_8",
+      "name_source": "INGRESSO",
+      "target": "room_10",
+      "name_target": "CAMERA"
+    },
+    {
+      "source": "room_8",
+      "name_source": "INGRESSO",
+      "target": "room_11",
+      "name_target": "BAGNO"
+    },
+    {
+      "source": "room_9",
+      "name_source": "BALCONE",
+      "target": "room_10",
+      "name_target": "CAMERA"
+    }
+  ],
+  "metadata": {
+    "input_image": "3.png",
+    "total_rooms": 11,
+    "total_connections": 10,
+    "unified_zones_found": 10,
+    "filtered_zones_used": 10
+  }
+}

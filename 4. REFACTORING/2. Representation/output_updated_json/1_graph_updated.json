@@ -1,0 +1,137 @@
+{
+  "nodes": [
+    {
+      "id": "room_1",
+      "name": "INGRESSO",
+      "color": "#0000FF",
+      "svg_path": "1675.2,631.8 1675.2,418.9 1675.2,213.1 1243.4,213.1 1243.4,631.8 1675.2,631.8",
+      "full_id": "s#room_1#INGRESSO"
+    },
+    {
+      "id": "room_2",
+      "name": "CUCINA",
+      "color": "#00FF00",
+      "svg_path": "414.6,853.9 1243.4,853.9 1243.4,631.8 1243.4,213.1 414.6,213.1 414.6,418.9 233.5,491.8 233.5,853.9 414.6,853.9",
+      "full_id": "s#room_2#CUCINA"
+    },
+    {
+      "id": "room_3",
+      "name": "STUDIO",
+      "color": "#FF0000",
+      "svg_path": "1675.2,631.8 1675.2,1059.4 2502.2,1059.4 2583.7,1059.4 2583.7,418.9 1675.2,418.9 1675.2,631.8",
+      "full_id": "s#room_3#STUDIO"
+    },
+    {
+      "id": "room_4",
+      "name": "DISIMPEGNO",
+      "color": "#00FFFF",
+      "svg_path": "1675.2,1815.6 1675.2,1655.3 1675.2,1620.7 1675.2,1059.4 1675.2,631.8 1243.4,631.8 1243.4,853.9 1243.4,1191.4 1243.4,1815.6 1675.2,1815.6",
+      "full_id": "s#room_4#DISIMPEGNO"
+    },
+    {
+      "id": "room_5",
+      "name": "RIPOSTIGLIO",
+      "color": "#FF00FF",
+      "svg_path": "1243.4,1191.4 1243.4,853.9 414.6,853.9 414.6,1059.4 644.5,1191.4 789.0,1191.4 1243.4,1191.4",
+      "full_id": "s#room_5#RIPOSTIGLIO"
+    },
+    {
+      "id": "room_6",
+      "name": "MATRIMONIALE",
+      "color": "#FFFF00",
+      "svg_path": "1675.2,1059.4 1675.2,1620.7 1675.2,1655.3 2583.7,1655.3 2583.7,1620.7 2758.9,1620.7 2758.9,1059.4 2583.7,1059.4 2502.2,1059.4 1675.2,1059.4",
+      "full_id": "s#room_6#MATRIMONIALE"
+    },
+    {
+      "id": "room_7",
+      "name": "BAGNO",
+      "color": "#0080FF",
+      "svg_path": "1243.4,1815.6 1243.4,1191.4 789.0,1191.4 644.5,1191.4 414.6,1248.0 414.6,1815.6 1243.4,1815.6",
+      "full_id": "s#room_7#BAGNO"
+    },
+    {
+      "id": "room_8",
+      "name": "BALCONE",
+      "color": "#FF0080",
+      "svg_path": "2583.7,1620.7 2583.7,1655.3 2583.7,2462.1 1675.2,2462.1 1551.6,2543.0 1454.6,2618.9 1425.6,2618.9 1425.6,2725.6 1454.6,2748.8 2758.9,2748.8 2812.5,2725.6 2812.5,1655.3 2758.9,1620.7 2583.7,1620.7",
+      "full_id": "s#room_8#BALCONE"
+    },
+    {
+      "id": "room_9",
+      "name": "CAMERA",
+      "color": "#FF8000",
+      "svg_path": "1675.2,1815.6 1675.2,2462.1 2583.7,2462.1 2583.7,1655.3 1675.2,1655.3 1675.2,1815.6",
+      "full_id": "s#room_9#CAMERA"
+    },
+    {
+      "id": "room_10",
+      "name": "SOGGIORNO",
+      "color": "#8080FF",
+      "svg_path": "1675.2,2462.1 1675.2,1815.6 1243.4,1815.6 414.6,1815.6 414.6,2424.8 618.2,2495.5 727.4,2565.4 789.0,2618.9 1425.6,2618.9 1454.6,2618.9 1551.6,2543.0 1675.2,2462.1",
+      "full_id": "s#room_10#SOGGIORNO"
+    }
+  ],
+  "links": [
+    {
+      "source": "room_1",
+      "name_source": "INGRESSO",
+      "target": "room_4",
+      "name_target": "DISIMPEGNO"
+    },
+    {
+      "source": "room_2",
+      "name_source": "CUCINA",
+      "target": "room_4",
+      "name_target": "DISIMPEGNO"
+    },
+    {
+      "source": "room_3",
+      "name_source": "STUDIO",
+      "target": "room_4",
+      "name_target": "DISIMPEGNO"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPEGNO",
+      "target": "room_5",
+      "name_target": "RIPOSTIGLIO"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPEGNO",
+      "target": "room_6",
+      "name_target": "MATRIMONIALE"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPEGNO",
+      "target": "room_7",
+      "name_target": "BAGNO"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPEGNO",
+      "target": "room_10",
+      "name_target": "SOGGIORNO"
+    },
+    {
+      "source": "room_8",
+      "name_source": "BALCONE",
+      "target": "room_9",
+      "name_target": "CAMERA"
+    },
+    {
+      "source": "room_9",
+      "name_source": "CAMERA",
+      "target": "room_10",
+      "name_target": "SOGGIORNO"
+    }
+  ],
+  "metadata": {
+    "input_image": "1.png",
+    "total_rooms": 10,
+    "total_connections": 9,
+    "unified_zones_found": 10,
+    "filtered_zones_used": 9
+  }
+}

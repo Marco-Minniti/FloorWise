@@ -1,0 +1,434 @@
+{
+  "rooms": {
+    "s#room_1#STUDIO": {
+      "svg_path": [],
+      "color": "#0000FF"
+    },
+    "s#room_2#CUCINA": {
+      "svg_path": [],
+      "color": "#00FF00"
+    },
+    "s#room_3#BAGNO": {
+      "svg_path": [],
+      "color": "#FF0000"
+    },
+    "s#room_4#DISIMPEGNO": {
+      "svg_path": [],
+      "color": "#00FFFF"
+    },
+    "s#room_5#STUDIO": {
+      "svg_path": [],
+      "color": "#FF00FF"
+    },
+    "s#room_6#RIPOSTIGLIO": {
+      "svg_path": [],
+      "color": "#FFFF00"
+    },
+    "s#room_7#CAMERA": {
+      "svg_path": [],
+      "color": "#0080FF"
+    },
+    "s#room_8#MATRIMONIALE": {
+      "svg_path": [],
+      "color": "#FF0080"
+    },
+    "s#room_9#BALCONE": {
+      "svg_path": [],
+      "color": "#FF8000"
+    },
+    "s#room_10#CUCINA": {
+      "svg_path": [],
+      "color": "#8080FF"
+    },
+    "s#room_11#INGRESSO": {
+      "svg_path": [],
+      "color": "#80FF80"
+    }
+  },
+  "walls": {
+    "m#1#Unknown-Unknown": {
+      "path": "M 2474.2,1338.3 L 2474.2,386.6000000000001",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#2#Unknown-Unknown": {
+      "path": "M 1563.6,1630.8 L 1908.3,1630.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#3#Unknown-Unknown": {
+      "path": "M 966.0,1222.1 L 966.0,1281.2",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#4#Unknown-Unknown": {
+      "path": "M 491.7,1630.8 L 226.6,1630.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#5#Unknown-Unknown": {
+      "path": "M 226.6,2080.4 L 491.7,2080.4",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#6#Unknown-Unknown": {
+      "path": "M 491.7,2080.4 L 866.1,2080.4",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#7#Unknown-Unknown": {
+      "path": "M 2783.5,2080.4 L 2783.5,1338.3",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#8#Unknown-Unknown": {
+      "path": "M 2268.5,2847.8 L 1563.6,2847.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#9#Unknown-Unknown": {
+      "path": "M 1563.6,2847.8 L 1116.1,2847.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#10#Unknown-Unknown": {
+      "path": "M 1116.1,2847.8 L 491.7,2847.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#11#Unknown-Unknown": {
+      "path": "M 2809.7,357.8 L 2809.7,1222.1",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#12#Unknown-Unknown": {
+      "path": "M 2326.5,2080.4 L 2326.5,2643.0",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#13#Unknown-Unknown": {
+      "path": "M 1116.1,1122.1 L 1116.1,795.6999999999999",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#14#Unknown-Unknown": {
+      "path": "M 2783.5,1338.3 L 2474.2,1338.3",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#15#Unknown-Unknown": {
+      "path": "M 1116.1,1630.8 L 966.0,1630.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#16#Unknown-Unknown": {
+      "path": "M 966.0,1630.8 L 784.9,1630.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#17#Unknown-Unknown": {
+      "path": "M 226.6,1630.8 L 226.6,1169.6",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#18#Unknown-Unknown": {
+      "path": "M 226.6,1169.6 L 226.6,763.0000000000001",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#19#Unknown-Unknown": {
+      "path": "M 2783.5,2080.4 L 2326.5,2080.4",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#20#Unknown-Unknown": {
+      "path": "M 620.0,386.6000000000001 L 1116.1,386.6000000000001",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#21#Unknown-Unknown": {
+      "path": "M 1116.1,386.6000000000001 L 1350.7,386.6000000000001",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#22#Unknown-Unknown": {
+      "path": "M 1350.7,386.6000000000001 L 2474.2,386.6000000000001",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#23#Unknown-Unknown": {
+      "path": "M 491.7,1912.3 L 491.7,2080.4",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#24#Unknown-Unknown": {
+      "path": "M 2538.8,319.5 L 2746.8,319.5",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#25#Unknown-Unknown": {
+      "path": "M 1563.6,1338.3 L 1420.5,1338.3",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#26#Unknown-Unknown": {
+      "path": "M 1420.5,1338.3 L 1350.7,1338.3",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#27#Unknown-Unknown": {
+      "path": "M 491.7,1630.8 L 586.2,1796.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#28#Unknown-Unknown": {
+      "path": "M 2746.8,319.5 L 2809.7,357.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#29#Unknown-Unknown": {
+      "path": "M 226.6,763.0000000000001 L 620.0,386.6000000000001",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#30#Unknown-Unknown": {
+      "path": "M 197.49999999999997,2149.0 L 226.6,2080.4",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#31#Unknown-Unknown": {
+      "path": "M 586.2,1796.8 L 784.9,1630.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#32#Unknown-Unknown": {
+      "path": "M 197.49999999999997,2564.8 L 226.6,2596.7",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#33#Unknown-Unknown": {
+      "path": "M 1563.6,2080.4 L 1761.6,2080.4",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#34#Unknown-Unknown": {
+      "path": "M 226.6,2596.7 L 491.7,2847.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#35#Unknown-Unknown": {
+      "path": "M 866.1,1169.6 L 966.0,1222.1",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#36#Unknown-Unknown": {
+      "path": "M 2326.5,2643.0 L 2268.5,2847.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#37#Unknown-Unknown": {
+      "path": "M 586.2,1796.8 L 491.7,1912.3",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#38#Unknown-Unknown": {
+      "path": "M 2474.2,386.6000000000001 L 2538.8,319.5",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#39#Unknown-Unknown": {
+      "path": "M 1350.7,1222.1 L 1420.5,1338.3",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#40#Unknown-Unknown": {
+      "path": "M 197.49999999999997,2564.8 L 197.49999999999997,2149.0",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#41#Unknown-Unknown": {
+      "path": "M 2783.5,1338.3 L 2809.7,1222.1",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#42#Unknown-Unknown": {
+      "path": "M 1116.1,2025.2 L 1116.1,1960.2",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#43#Unknown-Unknown": {
+      "path": "M 1563.6,1338.3 L 1563.6,1630.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#44#Unknown-Unknown": {
+      "path": "M 1563.6,1630.8 L 1563.6,2080.4",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#45#Unknown-Unknown": {
+      "path": "M 1563.6,2080.4 L 1563.6,2323.3",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#46#Unknown-Unknown": {
+      "path": "M 1563.6,2323.3 L 1563.6,2847.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#47#Unknown-Unknown": {
+      "path": "M 966.0,1281.2 L 966.0,1630.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#48#Unknown-Unknown": {
+      "path": "M 1116.1,2847.8 L 1116.1,2323.3",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#49#Unknown-Unknown": {
+      "path": "M 1116.1,2323.3 L 1116.1,2080.4",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#50#Unknown-Unknown": {
+      "path": "M 1116.1,2080.4 L 1116.1,2025.2",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#51#Unknown-Unknown": {
+      "path": "M 1563.6,2323.3 L 1116.1,2323.3",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#52#Unknown-Unknown": {
+      "path": "M 1116.1,1960.2 L 1116.1,1630.8",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#53#Unknown-Unknown": {
+      "path": "M 1350.7,1122.1 L 1116.1,1122.1",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#54#Unknown-Unknown": {
+      "path": "M 1350.7,1222.1 L 1350.7,1122.1",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#55#Unknown-Unknown": {
+      "path": "M 1350.7,1122.1 L 1350.7,386.6000000000001",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#56#Unknown-Unknown": {
+      "path": "M 966.0,1222.1 L 1116.1,1122.1",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#57#Unknown-Unknown": {
+      "path": "M 226.6,1169.6 L 866.1,1169.6",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#58#Unknown-Unknown": {
+      "path": "M 2326.5,2080.4 L 1761.6,2080.4",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#59#Unknown-Unknown": {
+      "path": "M 1116.1,386.6000000000001 L 1116.1,795.6999999999999",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#60#Unknown-Unknown": {
+      "path": "M 1183.3,2080.4 L 1116.1,2080.4",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#61#Unknown-Unknown": {
+      "path": "M 1116.1,2080.4 L 866.1,2080.4",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#62#Unknown-Unknown": {
+      "path": "M 1563.6,1338.3 L 2474.2,1338.3",
+      "type": "partition",
+      "door": "no"
+    },
+    "m#63#Unknown-Unknown": {
+      "path": "M 1563.6,2080.4 L 1350.7,2080.4",
+      "type": "partition",
+      "door": "no"
+    }
+  },
+  "links": [
+    {
+      "source": "room_1",
+      "name_source": "STUDIO",
+      "target": "room_4",
+      "name_target": "DISIMPEGNO"
+    },
+    {
+      "source": "room_2",
+      "name_source": "CUCINA",
+      "target": "room_4",
+      "name_target": "DISIMPEGNO"
+    },
+    {
+      "source": "room_3",
+      "name_source": "BAGNO",
+      "target": "room_4",
+      "name_target": "DISIMPEGNO"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPEGNO",
+      "target": "room_5",
+      "name_target": "STUDIO"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPEGNO",
+      "target": "room_6",
+      "name_target": "RIPOSTIGLIO"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPEGNO",
+      "target": "room_7",
+      "name_target": "CAMERA"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPEGNO",
+      "target": "room_8",
+      "name_target": "MATRIMONIALE"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPEGNO",
+      "target": "room_10",
+      "name_target": "CUCINA"
+    },
+    {
+      "source": "room_4",
+      "name_source": "DISIMPEGNO",
+      "target": "room_11",
+      "name_target": "INGRESSO"
+    },
+    {
+      "source": "room_8",
+      "name_source": "MATRIMONIALE",
+      "target": "room_9",
+      "name_target": "BALCONE"
+    }
+  ],
+  "metadata": {
+    "input_image": "2.png",
+    "total_rooms": 11,
+    "total_connections": 10,
+    "unified_zones_found": 10,
+    "filtered_zones_used": 10
+  }
+}
